@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="wave_animation.css" />
+    <style>
+      /* 追加したスタイル */
+      .sample {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+      }
+      .layer1,
+      .layer2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="sample">
+      <div class="imglayer1"></div>
+      <div class="layer1">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 4800 300"
+          width="100%"
+          height="100%"
+        >
+          <defs>
+            <path
+              d="M 0,0 v 50,0 q 400,-100 800,0 t 800,0 q 400,-100 800,0 t 800,0 q 400,-100 800,0 t 800,0 v 4200,0 Z"
+              id="wave1"
+            />
+          </defs>
+          <use xlink:href="#wave1" />
+        </svg>
+      </div>
+
+      <div class="imglayer2"></div>
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 4800 300"
+        width="100%"
+        height="100%"
+      >
+        <defs>
+          <clipPath id="midWave">
+            <path
+              d="M 0,0 v 70,0 q 400,-100 800,0 t 800,0 q 400,-100 800,0 t 800,0 q 400,-100 800,0 t 800,0 v 4200,0 Z"
+              id="wave2"
+            />
+          </clipPath>
+        </defs>
+        <use xlink:href="#wave2" />
+      </svg>
+
+      <div class="layer2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 4800 300"
+          width="100%"
+          height="100%"
+        >
+          <defs>
+            <path
+              d="M 0,0 v 50,0 q 400,100 800,0 t 800,0 q 400,100 800,0 t 800,0 q 400,100 800,0 t 800,0 v 4200,0 Z"
+              id="wave3"
+            />
+          </defs>
+          <use xlink:href="#wave3" />
+        </svg>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+.sample {
+  $svgWidth: 300%;
+  $svgHeight: 300px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  width: 100%;
+  height: 800px;
+  background-color: #fff;
+  svg {
+    width: 240%;
+    height: 40%;
+    viewBox : 0 0 240% 40%;
+  }
+  .layer1 {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 15%;
+    svg use {
+      fill: #009e8a;
+      will-change: animation;
+      animation: wave linear 5s infinite;
+    }
+  }
+  .layer2 {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 55%;
+    svg use {
+      fill: #ee0000;
+      will-change: animation;
+      animation: wave linear 5s infinite reverse;
+    }
+  }
+
+  .imglayer1 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: repeat-x;
+    background-image: url(./image/image4.png);
+    animation: img-slider 13s linear infinite;
+  }
+
+  .imglayer2 {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-image: url(./image/image4.png);
+    background-repeat: repeat-x;
+    background-position: left bottom;
+    will-change: animation;
+    animation: img-slider 15s linear infinite reverse;
+    clip-path: url(#midWave);
+  }
+  #midWave {
+    will-change: animation;
+    animation: wave 3s linear infinite;
+  }
+}
+
+@keyframes img-slider {
+  0% {
+    background-position: -1898px 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* waveという名前のアニメーションを定義 */
+@keyframes wave {
+  from {
+    transform: translate(-0%);
+  }
+  to {
+    transform: translate(-180%);
+  }
+}
